@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="../../css/style.css">
+    <title>Document</title>
+</head>
+
+<body id="mainBody" class="bg-[#E8F0E2]">
+    <!-- Loader -->
+    <div id="loader" class="fixed bg-[#ffffffa0] inset-0 bg-white flex items-center justify-center z-50">
+        <div class="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+    </div>
+
+    <div class="main_container flex">
+        <div id="sidebar" class="sidebar l-0 t-0 fixed py-[30px] px-[15px] w-[300px] h-[100vh] bg-[#385C4C]">
+            <div class="sidebar_logo flex justify-center">
+                <img class="w-[190px]  " src="../../../assets/images/logo.png" alt="">
+            </div>
+
+            <ul class="flex flex-col  mt-[50px] gap-[20px]">
+                <li>
+                    <a href="../Dashboard/Dashboard.html"
+                        class="h-[45px] rounded-[10px] bg-[#E3FA7814] flex text-[#fff] gap-[10px] items-center px-[15px]">
+                        <img src="../../../assets/icons/dashboard.svg" alt="">
+                        <span>Dashboard</span></a>
+                </li>
+                <li>
+                    <a href="../Inventory/Inventory.html"
+                        class="h-[45px] rounded-[10px] bg-[#E3FA7814] flex text-[#fff] gap-[10px] items-center px-[15px]">
+                        <img src="../../../assets/icons/inventory.svg" alt="">
+                        <span>Inventory</span></a>
+                </li>
+                <li>
+                    <a href="../Stock/Stock.html"
+                        class="h-[45px] rounded-[10px] bg-[#E3FA7814] flex text-[#fff] gap-[10px] items-center px-[15px]">
+                        <img src="../../../assets/icons/stock.svg" alt="">
+                        <span>Stock</span></a>
+                </li>
+                <li>
+                    <a href="../Shipping/Shipping.html"
+                        class="h-[45px] rounded-[10px] bg-[#E3FA7814] flex text-[#fff] gap-[10px] items-center px-[15px]">
+                        <img src="../../../assets/icons/shipping.svg" alt="">
+                        <span>Shipping</span></a>
+                </li>
+                <li >
+                    <a href="../Message/Message.html"
+                        class="h-[45px] rounded-[10px] bg-[#E3FA7814] flex text-[#fff] gap-[10px] items-center px-[15px]">
+                        <img src="../../../assets/icons/message.svg" alt="">
+                        <span>Message</span></a>
+                </li>
+            </ul>
+        </div>
+        <div id="contentArea" class="left_side_content ml-[300px] w-[100%] ">
+            <div class="navbar bg-white w-[100%] flex px-[20px] justify-between items-center h-[80px] ">
+                <div class="flex items-center gap-[15px]">
+                    <button id="collapseToggle"
+                        class="w-[50px] cursor-pointer justify-center flex items-center h-[40px] bg-[#46694f] rounded-[6px] ">
+                        <img src="../../../assets/icons/left-arrow.svg" class="w-[20px]" alt="">
+                    </button>
+                    <h2 class="text-[#385C4C]"> <span class="text-[15px]">Branch Office</span> : <b class="text-[18px]">
+
+                            GA
+                            Headquarter</b> </h2>
+                </div>
+                <div class="flex gap-[30px] items-center">
+                  
+
+                    <a href="#" class="flex gap-2 items-center text-[#385C4C] text-[15px] ">
+                        <img src="../../../assets/icons/profile.svg" alt="">
+                        Test User
+                    </a>
+
+                    <a href="../../../Login.html"
+                        class="  cursor-pointer btn_hover flex items-center justify-center gap-[10px] bg-[#DC3545] h-[40px] w-[130px] rounded-[6px] text-white text-[15px]">
+                        Sign-out
+                        <img class="w-[24px] h-[24px]" src="../../../assets/icons/logout.svg" alt="">
+                    </a>
+
+
+                </div>
+            </div>
+            <div class="inner_contant p-[20px]  w-[100%] ">
+                <div
+                    class="content_container flex flex-col  justify-between w-[100%] h-[100%]  bg-white rounded-[10px]">
+                    <div>
+                        <div
+                            class="top_header border-b p-[15px]  border-b-[#E8F0E2] border border-transparent flex justify-between items-center">
+
+                            <h1 class="text-[20px] text-[#385C4C] font-[700]">Change Profile Form</h1>
+
+                        </div>
+
+
+                        <form action=""
+                            class="max-w-[520px] p-[20px] rounded-[10px] my-[30px] mx-auto bg-[rgba(56,92,76,0.04)] ">
+
+                            <div class=" flex flex-col gap-[20px]">
+                                <div class="input_box">
+                                    <label for="">Username</label>
+                                    <input type="text"  value="Test User" class="input !bg-[#fff] " placeholder="Enter Your Username">
+                                </div>
+                                <div class="input_box">
+                                    <label for="">Old Password</label>
+                                    <input type="password" class="input !bg-[#fff] " placeholder="Enter Your Old Password">
+                                </div>
+                                <div class="input_box">
+                                    <label for="">New Password</label>
+                                    <input type="password" class="input !bg-[#fff] " placeholder="Enter Your password">
+                                </div>
+                                <div class="input_box">
+                                    <label for="">Re-entry New Password</label>
+                                    <input type="password" class="input !bg-[#fff] " placeholder="Re-entry New Password">
+                                </div>
+
+                             
+
+                                 <div class="button_box col-span-2 flex  my-[10px] justify-end gap-[20px]">
+                                <button class="cancel cursor-pointer btn_hover">Cancel</button>
+                                <button class="create cursor-pointer btn_hover " >Update</button>
+
+                            </div>
+                            </div>
+
+                           
+                        </form>
+
+                    </div>
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="../../js/main.js"></script>
+
+
+</html>
