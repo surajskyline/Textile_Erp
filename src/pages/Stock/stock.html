@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="../../css/style.css">
+
+    <!-- Daterangepicker CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+    <title>Document</title>
+</head>
+
+<body id="mainBody" class="bg-[#F0F1F1]">
+
+    <!-- Loader -->
+    <div id="loader" class="fixed bg-[#ffffffa0] inset-0 bg-white flex items-center justify-center z-50">
+        <div class="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+    </div>
+    <div class="main_container flex">
+        <div id="sidebar" class="sidebar l-0 t-0 fixed py-[30px] px-[15px] w-[300px] h-[100vh] bg-[#FEFDE0]">
+            <div class="sidebar_logo flex justify-center">
+                <img class="w-[150px]  " src="../../../assets/images/logo.png" alt="">
+            </div>
+
+            <button id="collapseToggle"
+                class="w-[48px] absolute top-[20px] right-[0] rounded-tr-none rounded-br-none cursor-pointer justify-center flex items-center h-[38px] bg-[#781E16] rounded-[6px] ">
+                <img src="../../../assets/icons/left-arrow.svg" class="w-[20px]" alt="">
+            </button>
+
+            <ul class="flex flex-col  mt-[50px] gap-[18px]">
+                <li>
+                    <a href="../Dashboard/Dashboard.html"
+                        class="h-[45px] rounded-[5px] flex text-[#000] gap-[10px] items-center px-[15px]">
+                        <img src="../../../assets/icons/dashboard.svg" alt="">
+                        <span>Dashboard</span></a>
+                </li>
+                <li>
+                    <a href="../Order/order.html"
+                        class="h-[45px] rounded-[5px] flex text-[#000] gap-[10px] items-center px-[15px]">
+                        <img src="../../../assets/icons/cart.svg" alt="">
+                        <span>Orders</span></a>
+                </li>
+                <li>
+                    <a href="../Jobs/jobs.html"
+                        class="h-[45px] rounded-[5px] flex text-[#000] gap-[10px] items-center px-[15px]">
+                        <img src="../../../assets/icons/jobs.svg" alt="">
+                        <span>Jobs</span></a>
+                </li>
+
+                <li class="active">
+                    <a href="#" class="h-[45px] rounded-[5px] flex text-[#000] gap-[10px] items-center px-[15px]">
+                        <img src="../../../assets/icons/stock.svg
+                        " alt="">
+                        <span>Stocks</span></a>
+                </li>
+                  <li >
+                    <a href="../UserManagement/User_Management.html"
+                        class="h-[45px] rounded-[5px] flex text-[#000] gap-[10px] items-center px-[15px]">
+                        <img src="../../../assets/icons/users.svg" alt="">
+                        <span>Users</span></a>
+                </li>
+                <li>
+                    <a href="#" class="h-[45px] rounded-[5px] flex text-[#000] gap-[10px] items-center px-[15px]">
+                        <img src="../../../assets/icons/doc.svg" alt="">
+                        <span>Reports</span></a>
+                </li>
+
+            </ul>
+        </div>
+        <div id="contentArea" class="left_side_content ml-[300px] w-[100%] ">
+            <div class="navbar bg-white w-[100%] flex px-[20px] justify-between items-center h-[80px] ">
+                <div class="flex items-center gap-[15px]">
+                    <h2 class="text-[#000]"> <span class="text-[20px]">Welcome </span> <b class="text-[18px]">
+                            Test user</b> </h2>
+                </div>
+                <div class="flex gap-[15px] items-center">
+
+
+                    <div class="relative">
+                        <div
+                            class="w-[18px] absolute right-[0] flex justify-center items-center h-[18px] rounded-full bg-[#D62925] text-[#fff] text-[10px] ">
+                            10</div>
+                        <img src="../../../assets/icons/notification.svg" alt="">
+                    </div>
+
+                    <a href="../Profile/Profile.html" class="flex gap-2 items-center text-[#385C4C] text-[15px] ">
+                        <img src="../../../assets/icons/profile.svg" alt="">
+                    </a>
+
+                    <a href="../../../Login.html"
+                        class="  cursor-pointer flex btn_hover items-center justify-center gap-[10px] bg-[#EB2F06] h-[40px] w-[110px] rounded-[6px] text-white text-[15px]">
+                        Logout
+                        <img class="w-[24px] h-[24px]" src="../../../assets/icons/logout.svg" alt="">
+                    </a>
+
+
+                </div>
+            </div>
+            <div class="inner_contant mt-[20px]  w-[100%] ">
+                <div class="content_container w-[100%] h-[100%]  bg-white rounded-[10px]">
+                    <div
+                        class="top_header border-b p-[15px]  border-b-[#E8F0E2] border border-transparent flex justify-between items-center">
+
+                        <h1 class="text-[20px] text-[#000] font-[700]">Stock List</h1>
+
+                        <div class="flex gap-[15px] items-center">
+                            <div class="search_box relative">
+                                <img src="../../../assets/icons/search.svg" class="absolute w-[20px]" alt="" srcset="">
+                                <input type="text" placeholder="Search here.."
+                                    class=" input !border-0 !w-[325px] rounded-[5px] !mt-[0] !px-[40px] !h-[45px] bg-[rgba(23,23,23,0.05)] ">
+                            </div>
+
+                            <div class="flex gap-[15px] items-center">
+                                <select name=""
+                                    class="input !w-[250px] !border-0 !mt-[0] !bg-[rgba(23,23,23,0.05)] !h-[45px]"
+                                    id="">
+                                    <option value="">Select Status</option>
+                                    <option value="">Penddign</option>
+                                    <option value="">Done</option>
+                                    <option value="">Select Status</option>
+                                </select>
+                                <button type="button"
+                                    class=" cursor-pointer h-[45px] px-[30px] text-[#fff] text-[15px] font-[500] rounded-[5px] bg-[#1E3799]   ">
+                                    Filter </button>
+                            </div>
+                            <a href="../Stock/AddStock.html"
+                                class=" cursor-pointer flex gap-[5px] h-[45px] px-[15px] font-[500] items-center text-[#fff] text-[15px] rounded-[5px] bg-[#05C46B]   ">
+                                Add Stock <img src="../../../assets/icons/plus.svg" class="w-[22px]" alt="">
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                    <div class="h-[calc(100vh_-_209px)] flex flex-col justify-between">
+                        <div class="table_container p-[15px]">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Mark No</th>
+                                        <th>Design No</th>
+                                        <th>Item</th>
+                                        <th>Quantity</th>
+                                        <th>Status</th>
+                                        <th class="w-[100px]">Edit</th>
+                                        <th class="w-[100px]">Delete</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>ORD1234</td>
+                                        <td>D1002</td>
+                                        <td>300</td>
+                                        <td>
+                                            <div class="badge out_of_stock">Out of Stock</div>
+                                        </td>
+                                        <td> <a href="../Stock/EditStock.html"
+                                                class="w-[70px] gap-[5px] text-white h-[35px] flex justify-center text-[15px] items-center rounded-[5px] bg-[#1e90ff]">
+                                                <img src="../../../assets/icons/edit.svg" class="w-[20px]" alt="">
+
+                                                Edit
+
+                                            </a> </td>
+                                        <td> <a href="#delete_stock" rel="modal:open"
+                                                class="w-[90px] gap-[5px] text-white h-[35px] flex justify-center text-[15px] items-center rounded-[5px] bg-[#D62925]">
+                                                <img src="../../../assets/icons/delete.svg" class="w-[20px]" alt="">
+                                                Delete
+                                            </a> </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>1</td>
+                                        <td>ORD1234</td>
+                                        <td>D1002</td>
+                                        <td>300</td>
+                                        <td>
+                                            <div class="badge full">Full</div>
+                                        </td>
+                                        <td> <a href="../Stock/EditStock.html"
+                                                class="w-[70px] gap-[5px] text-white h-[35px] flex justify-center text-[15px] items-center rounded-[5px] bg-[#1e90ff]">
+                                                <img src="../../../assets/icons/edit.svg" class="w-[20px]" alt="">
+
+                                                Edit
+
+                                            </a> </td>
+                                        <td> <a href="#delete_stock" rel="modal:open"
+                                                class="w-[90px] gap-[5px] text-white h-[35px] flex justify-center text-[15px] items-center rounded-[5px] bg-[#D62925]">
+                                                <img src="../../../assets/icons/delete.svg" class="w-[20px]" alt="">
+                                                Delete
+                                            </a> </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>1</td>
+                                        <td>ORD1234</td>
+                                        <td>D1002</td>
+                                        <td>300</td>
+                                        <td>
+                                            <div class="badge pending">Pending</div>
+                                        </td>
+                                        <td> <a href="../Stock/EditStock.html"
+                                                class="w-[70px] gap-[5px] text-white h-[35px] flex justify-center text-[15px] items-center rounded-[5px] bg-[#1e90ff]">
+                                                <img src="../../../assets/icons/edit.svg" class="w-[20px]" alt="">
+                                                Edit
+
+                                            </a> </td>
+                                        <td> <a href="#delete_stock" rel="modal:open"
+                                                class="w-[90px] gap-[5px] text-white h-[35px] flex justify-center text-[15px] items-center rounded-[5px] bg-[#D62925]">
+                                                <img src="../../../assets/icons/delete.svg" class="w-[20px]" alt="">
+                                                Delete
+                                            </a> </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+
+
+                        <div class="pagination flex justify-end p-[15px]">
+                            <ul class="flex gap-[10px]">
+                                <li class="w-[45px] h-[35px] bg-[#fff] flex justify-center items-center">
+                                    <img src="../../../assets/icons/left-arrow_black.svg" alt="">
+                                </li>
+
+                                <li
+                                    class="w-[45px] h-[35px] bg-[#000] flex justify-center items-center rounded-[5px] text-white border-[1px] border-[#000]">
+                                    1</li>
+                                <li
+                                    class="w-[45px] h-[35px] bg-[#fff] flex justify-center items-center rounded-[5px] text-black border-[1px] border-[#000]">
+                                    2</li>
+                                <li
+                                    class="w-[45px] h-[35px] bg-[#fff] flex justify-center items-center rounded-[5px] text-black border-[1px] border-[#000]">
+                                    3</li>
+                                <li class="w-[45px] h-[35px] bg-[#fff] flex justify-center items-center ">
+                                    <img src="../../../assets/icons/left-arrow_black.svg" class="rotate-[-180deg]"
+                                        alt="">
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal HTML embedded directly into document -->
+    <div id="delete_stock" class="modal !py-[25px] ">
+        <div
+            class="w-[50px]  h-[42px] mx-auto bg-[rgba(214,41,37,0.2)] flex justify-center items-center rounded-[10px]">
+            <img src="../../../assets/icons/delete-red.svg" alt="">
+        </div>
+        <div class="text-center my-[20px]">
+            <h2 class="text-[20px] font-[600]">Delete</h2>
+            <p> Are you sure you want to delete this Stock?
+        </div>
+        </p>
+        <div class="flex justify-center mt-[30px] gap-[30px]">
+            <a class="cancel flex justify-center items-center" href="#" rel="modal:close"> Cancel </a>
+            <a class="create flex justify-center items-center" href="#" rel="modal:close"> Confirm </a>
+
+        </div>
+    </div>
+
+</body>
+
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<!-- Moment.js (REQUIRED) -->
+<script src="https://cdn.jsdelivr.net/npm/moment@2.29.4/moment.min.js"></script>
+<!-- Daterangepicker JS -->
+<script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<!-- jQuery Modal -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+<script src="../../js/main.js"></script>
+
+
+</html>

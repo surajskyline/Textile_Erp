@@ -32,9 +32,24 @@ function ShippingModal(show) {
   }
 }
 
-
 document.addEventListener("DOMContentLoaded", () => {
   document.body.classList.add("fade-in");
 });
 
+ function togglePassword(inputId, icon) {
+    const input = document.getElementById(inputId);
+    const isPassword = input.type === "password";
+    input.type = isPassword ? "text" : "password";
+    icon.src = isPassword
+      ? "../../../assets/icons/eye-on.svg"
+      : "../../../assets/icons/eye-off.svg";
+  }
+  
 
+$(document).ready(function () {
+  $("#kt_daterangepicker_1").daterangepicker({
+    locale: {
+      format: "DD-MM-YYYY",
+    },
+  });
+});

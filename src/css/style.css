@@ -7,15 +7,16 @@
 }
 
 ::-webkit-scrollbar {
-    width: 5px;
-    background-color: #385c4c50;
+    width: 4px;
+    background-color: #221f2023;
+
     border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
     border-radius: 10px;
+    background-color: #3a3737;
 
-    background-color: #385C4C;
 }
 
 .login_container {
@@ -52,7 +53,14 @@ label {
     font-weight: 500;
     padding: 8px;
 }
+form input{
+    background-color: #fff ;
 
+}
+
+input:focus {
+    outline: none;
+}
 
 ::placeholder {
     color: rgba(0, 0, 0, 0.40);
@@ -63,12 +71,23 @@ label {
 
 }
 
+.search_box {
+    position: relative;
+}
+
+.search_box img {
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+}
+
 select {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
     background: url(../../assets/icons/downArrow.svg) no-repeat right 10px center;
     color: #000 !important;
+    background-color: #fff !important;
 }
 
 input[type="date"] {
@@ -114,8 +133,18 @@ body.collapsed #collapseToggle img {
     transform: rotate(-180deg);
 }
 
+#contentArea {
+    padding: 0 20px 20px 20px;
+}
+
 body.collapsed #contentArea {
     margin-left: 80px;
+}
+
+.navbar {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
 }
 
 body.collapsed #collapseToggle img {
@@ -132,8 +161,7 @@ table {
 
 table thead {
     height: 50px;
-    background-color: #e8f0e294;
-    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.03);
 
 }
 
@@ -141,8 +169,9 @@ table thead tr th {
     font-size: 15px;
     padding: 0 10px;
     text-align: start;
-    color: #385C4C;
-    font-weight: 700;
+    color: #000000;
+    font-weight: 600;
+
 }
 
 table tbody tr {
@@ -151,7 +180,7 @@ table tbody tr {
 }
 
 table tbody tr td {
-    color: rgba(56, 92, 76, 0.87);
+    color: rgba(0, 0, 0, 0.7);
     font-size: 14px;
     padding: 0 10px;
     font-weight: 400;
@@ -180,15 +209,15 @@ table tbody tr:last-child {
 .cancel {
     background-color: #DC3545;
     color: #fff;
-    height: 40px;
+    height: 45px;
     padding: 0 25px;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
     border-radius: 5px;
 }
 
 .create {
-    background-color: #3742FA;
+    background-color: #05C46B;
 }
 
 .export_btn {
@@ -221,4 +250,54 @@ body.fade-in {
 .list_disable {
     opacity: 0.5;
     pointer-events: none;
+}
+
+/* ul li{
+    list-style: disc;
+} */
+
+.badge {
+    height: 28px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    padding: 0 15px;
+    width: max-content;
+}
+
+.out_of_stock {
+    color: #D62925;
+    background-color: rgba(214, 41, 37, 0.15);
+}
+
+.full {
+    color: #05C46B;
+    background-color: rgba(5, 196, 107, 0.15);
+}
+
+.pending {
+    color: #FFB900;
+    background-color: rgba(255, 185, 0, 0.15);
+}
+.todo{
+color: #000000;
+background-color: rgba(0, 0, 0, 0.15);
+}
+.in_progress{
+color: #976505;
+background-color: rgba(255, 168, 1, 0.15);
+}
+.ready{
+    color: #3C40C6;
+    background-color: rgba(60, 64, 198, 0.15);
+}
+
+.modal a.close-modal{
+    display: none !important;
+}
+
+button{
+    cursor: pointer;
 }

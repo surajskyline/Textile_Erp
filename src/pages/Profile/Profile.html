@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="../../css/style.css">
+    <!-- Daterangepicker CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+    <title>Document</title>
+</head>
+
+<body id="mainBody" class="bg-[#F0F1F1]">
+
+    <!-- Loader -->
+    <div id="loader" class="fixed bg-[#ffffffa0] inset-0 bg-white flex items-center justify-center z-50">
+        <div class="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+    </div>
+    <div class="main_container flex">
+        <div id="sidebar" class="sidebar l-0 t-0 fixed py-[30px] px-[15px] w-[300px] h-[100vh] bg-[#FEFDE0]">
+            <div class="sidebar_logo flex justify-center">
+                <img class="w-[150px]  " src="../../../assets/images/logo.png" alt="">
+            </div>
+
+            <button id="collapseToggle"
+                class="w-[48px] absolute top-[20px] right-[0] rounded-tr-none rounded-br-none cursor-pointer justify-center flex items-center h-[38px] bg-[#781E16] rounded-[6px] ">
+                <img src="../../../assets/icons/left-arrow.svg" class="w-[20px]" alt="">
+            </button>
+
+            <ul class="flex flex-col  mt-[50px] gap-[18px]">
+                <li>
+                    <a href="../Dashboard/Dashboard.html"
+                        class="h-[45px] rounded-[5px] flex text-[#000] gap-[10px] items-center px-[15px]">
+                        <img src="../../../assets/icons/dashboard.svg" alt="">
+                        <span>Dashboard</span></a>
+                </li>
+                <li>
+                    <a href="../Order/order.html"
+                        class="h-[45px] rounded-[5px] flex text-[#000] gap-[10px] items-center px-[15px]">
+                        <img src="../../../assets/icons/cart.svg" alt="">
+                        <span>Orders</span></a>
+                </li>
+                <li>
+                    <a href="../Jobs/jobs.html"
+                        class="h-[45px] rounded-[5px] flex text-[#000] gap-[10px] items-center px-[15px]">
+                        <img src="../../../assets/icons/jobs.svg" alt="">
+                        <span>Jobs</span></a>
+                </li>
+
+                <li>
+                    <a href="../Stock/stock.html"
+                        class="h-[45px] rounded-[5px] flex text-[#000] gap-[10px] items-center px-[15px]">
+                        <img src="../../../assets/icons/stock.svg
+                        " alt="">
+                        <span>Stocks</span></a>
+                </li>
+                <li>
+                    <a href="../UserManagement/User_Management.html"
+                        class="h-[45px] rounded-[5px] flex text-[#000] gap-[10px] items-center px-[15px]">
+                        <img src="../../../assets/icons/users.svg" alt="">
+                        <span>Users</span></a>
+                </li>
+                <li>
+                    <a href="#" class="h-[45px] rounded-[5px] flex text-[#000] gap-[10px] items-center px-[15px]">
+                        <img src="../../../assets/icons/doc.svg" alt="">
+                        <span>Reports</span></a>
+                </li>
+
+            </ul>
+        </div>
+        <div id="contentArea" class="left_side_content ml-[300px] w-[100%] ">
+            <div class="navbar bg-white w-[100%] flex px-[20px] justify-between items-center h-[80px] ">
+                <div class="flex items-center gap-[15px]">
+                    <h2 class="text-[#000]"> <span class="text-[20px]">Welcome </span> <b class="text-[18px]">
+                            Test user</b> </h2>
+                </div>
+                <div class="flex gap-[15px] items-center">
+
+
+                    <div class="relative">
+                        <div
+                            class="w-[18px] absolute right-[0] flex justify-center items-center h-[18px] rounded-full bg-[#D62925] text-[#fff] text-[10px] ">
+                            10</div>
+                        <img src="../../../assets/icons/notification.svg" alt="">
+                    </div>
+
+                    <a href="../Profile/Profile.html" class="flex gap-2 items-center text-[#385C4C] text-[15px] ">
+                        <img src="../../../assets/icons/profile.svg" alt="">
+                    </a>
+
+                    <a href="../../../Login.html"
+                        class="  cursor-pointer flex btn_hover items-center justify-center gap-[10px] bg-[#EB2F06] h-[40px] w-[110px] rounded-[6px] text-white text-[15px]">
+                        Logout
+                        <img class="w-[24px] h-[24px]" src="../../../assets/icons/logout.svg" alt="">
+                    </a>
+
+
+                </div>
+            </div>
+            <div class="inner_contant mt-[20px]  w-[100%] ">
+                <div class="content_container w-[100%] h-[100%]  bg-white rounded-[10px]">
+                    <div
+                        class="top_header border-b p-[15px]  border-b-[#E8F0E2] border border-transparent flex justify-between items-center">
+
+                        <h1 class="text-[20px] text-[#000] font-[700]">Profile</h1>
+
+
+
+                    </div>
+
+                    <div class="form_box p-[15px]">
+                        <form action="" class="p-[15px] bg-[rgba(56,92,76,0.04)] max-w-[500px] mx-auto ">
+                            <div class="grid grid-cols-1 gap-[30px]">
+
+                                <div class="input_box">
+                                    <label for="">User Name</label>
+                                    <input type="text" class="input" value="Test user" placeholder="D1002" name=""
+                                        id="">
+                                </div>
+
+                                <!-- Old Password -->
+                                <div class="input_box">
+                                    <label for="oldPassword">Old Password</label>
+                                    <div class="relative">
+                                        <input value="123546ss" type="password" id="oldPassword" class="input w-full pr-10"
+                                            placeholder="***********" />
+                                        <img src="../../../assets/icons/eye-off.svg"
+                                            class="absolute right-[10px] top-[15px] w-5 h-5 cursor-pointer"
+                                            onclick="togglePassword('oldPassword', this)" />
+                                    </div>
+                                </div>
+
+                                <!-- New Password -->
+                                <div class="input_box">
+                                    <label for="newPassword">New Password</label>
+                                    <div class="relative">
+                                        <input type="password" id="newPassword" class="input w-full pr-10"
+                                            placeholder="********" />
+                                        <img src="../../../assets/icons/eye-off.svg"
+                                            class="absolute right-[10px] top-[15px] w-5 h-5 cursor-pointer"
+                                            onclick="togglePassword('newPassword', this)" />
+                                    </div>
+                                </div>
+
+                                <!-- Re-entry New Password -->
+                                <div class="input_box">
+                                    <label for="reNewPassword">Re-entry New Password</label>
+                                    <div class="relative">
+                                        <input type="password" id="reNewPassword" class="input w-full pr-10"
+                                            placeholder="********" />
+                                        <img src="../../../assets/icons/eye-off.svg"
+                                            class="absolute right-[10px] top-[15px] w-5 h-5 cursor-pointer"
+                                            onclick="togglePassword('reNewPassword', this)" />
+                                    </div>
+                                </div>
+
+
+
+
+
+
+                            </div>
+
+                            <div class="flex justify-end mt-[20px]">
+                                <button type="button"
+                                    class="flex create justify-center gap-[10px] cursor-pointer items-center"> Update
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<!-- Moment.js (REQUIRED) -->
+<script src="https://cdn.jsdelivr.net/npm/moment@2.29.4/moment.min.js"></script>
+<!-- Daterangepicker JS -->
+<script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<script src="../../js/main.js"></script>
+
+
+</html>
