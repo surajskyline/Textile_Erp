@@ -5,16 +5,19 @@
     box-sizing: border-box;
     font-family: "Mulish", sans-serif;
 }
-::-webkit-scrollbar{
+
+::-webkit-scrollbar {
     width: 5px;
     background-color: #385c4c50;
     border-radius: 10px;
 }
-::-webkit-scrollbar-thumb{
+
+::-webkit-scrollbar-thumb {
     border-radius: 10px;
 
     background-color: #385C4C;
 }
+
 .login_container {
     background-image: url(../../assets/images/loginBg.png);
     background-size: cover;
@@ -82,13 +85,15 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 #sidebar .active a {
-    color: #000;
-    background-color: #E3FA78;
+    color: #fff;
+    background: linear-gradient(90deg, #FF7556 0%, #FF4757 100%);
+
 }
 
 #sidebar .active a img {
     filter: invert(1);
 }
+
 
 #sidebar,
 #contentArea,
@@ -213,7 +218,7 @@ body.fade-in {
     opacity: 1;
 }
 
-.list_disable{
+.list_disable {
     opacity: 0.5;
     pointer-events: none;
 }
